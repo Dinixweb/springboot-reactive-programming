@@ -15,3 +15,6 @@ implements Publisher and returns 0 or 1 elements
 implements Publisher and returns N elements.
 
 You can also readmore on https://spring.io/reactive
+
+### Functional Endpoint / Rest Api Approach
+For the purpose of learning you will find both functional endpoint and rest api approach
