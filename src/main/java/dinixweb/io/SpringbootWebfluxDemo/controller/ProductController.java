@@ -43,7 +43,7 @@ public class ProductController {
         return productService.addProduct(productsMono);
     }
 
-    @PostMapping(value = "/product/update/{id}")
+    @PutMapping(value = "/product/update/{id}")
     public Mono<Products> addProduct(@PathVariable("id") String id, @RequestBody Mono<Products> productsMono) {
         return productService.updateProduct(productsMono, id);
     }
