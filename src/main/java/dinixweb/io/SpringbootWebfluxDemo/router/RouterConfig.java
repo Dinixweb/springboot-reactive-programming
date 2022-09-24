@@ -14,11 +14,12 @@ public class RouterConfig {
     @Autowired
     private ProductHandler productHandler;
 
+
     @Bean
     public RouterFunction<ServerResponse>routerFunction(){
         return RouterFunctions.route()
                 .GET("/product", productHandler::getAllProducts)
-                .GET("/product/{id}",productHandler::getProductById)
+                .GET("/{id}",productHandler::getProductById)
                 .build();
     }
 }

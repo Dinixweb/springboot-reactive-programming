@@ -3,6 +3,8 @@ package dinixweb.io.SpringbootWebfluxDemo;
 import dinixweb.io.SpringbootWebfluxDemo.controller.ProductController;
 import dinixweb.io.SpringbootWebfluxDemo.handler.ProductHandler;
 import dinixweb.io.SpringbootWebfluxDemo.model.Products;
+import dinixweb.io.SpringbootWebfluxDemo.repository.ProductRepository;
+import dinixweb.io.SpringbootWebfluxDemo.router.RouterConfig;
 import dinixweb.io.SpringbootWebfluxDemo.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +16,8 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
+
+
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
@@ -31,7 +35,7 @@ class SpringbootWebfluxDemoApplicationTests {
 	private ProductService productService; // use this for api base approach
 
 	@MockBean
-	private ProductHandler productHandler; // use this if you are functional endpoint
+	private ProductRepository productRepository; // use this if you are functional endpoint
 
 	@Test
 	public void addProductTest(){
@@ -47,9 +51,8 @@ class SpringbootWebfluxDemoApplicationTests {
 	@Test
 	public void productsListTest(){
 		Flux<Products> productsFlux = Flux.just(new Products("22", "Infinix Z12", 2, 105000),
-		new Products("23", "Beat By Dre Bluetooth Headphones",5,57000));
+				new Products("23", "Beat By Dre Bluetooth Headphones",5,57000));
 		when(productService.getAllProducts()).thenReturn(productsFlux);
-
 		Flux<Products> productsFlux1  = webTestClient.get().uri("/product")
 				.exchange()
 				.expectStatus()

@@ -21,15 +21,15 @@ public class ProductController {
     }
 
 
-//    @GetMapping(value = "/product", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-//    public Flux<Products> fetchAllProducts() {
-//        return productService.getAllProducts();
-//    }
+    @GetMapping(value = "/product", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Products> fetchAllProducts() {
+        return productService.getAllProducts();
+    }
 
-//    @GetMapping(value = "product/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-//    public Mono<Products> getSingleProduct(@PathVariable("id") String id) {
-//        return productService.getProductById(id);
-//    }
+    @GetMapping(value = "product/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Mono<Products> getSingleProduct(@PathVariable("id") String id) {
+        return productService.getProductById(id);
+    }
 
     @GetMapping(value = "/product-range", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Products> getProductByPriceRange(@RequestParam(value = "min", required = true) double min,

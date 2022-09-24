@@ -4,6 +4,7 @@ import dinixweb.io.SpringbootWebfluxDemo.model.Products;
 import dinixweb.io.SpringbootWebfluxDemo.repository.ProductRepository;
 import dinixweb.io.SpringbootWebfluxDemo.service.ProductService;
 import dinixweb.io.SpringbootWebfluxDemo.utils.AppUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;

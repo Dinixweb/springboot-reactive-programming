@@ -6,13 +6,14 @@ import dinixweb.io.SpringbootWebfluxDemo.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Range;
 import org.springframework.data.util.StreamUtils;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Comparator;
 
-@Service
+@Component
 public class ProductService {
 
     @Autowired
